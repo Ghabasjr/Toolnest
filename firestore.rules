@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to calculation history for authenticated users
+    match /calculations/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow anonymous read access to public data if needed
+    match /public/{document=**} {
+      allow read: if true;
+    }
+  }
+}
