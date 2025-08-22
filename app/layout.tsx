@@ -45,7 +45,9 @@ export const metadata: Metadata = {
     title: "ToolNest - Professional Calculator Tools",
     description: "A comprehensive suite of calculator tools for professionals and students",
   },
-
+  other: {
+    "google-adsense-account": "ca-pub-8493316210982445"
+  },
 }
 
 export default function RootLayout({
