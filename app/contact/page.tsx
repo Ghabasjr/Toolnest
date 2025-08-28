@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { PageLayout } from "@/components/page-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -71,10 +70,14 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto space-y-8">
         {/* Contact Info */}
         <div className="text-center space-y-4">
-          <h2 className="font-sans text-2xl font-bold">Get in Touch</h2>
+          <h2 className="font-sans text-2xl font-bold">We’d Love to Hear From You</h2>
           <p className="text-muted-foreground">
-            Have a question, suggestion, or feedback? We'd love to hear from you. Send us a message and we'll respond as
-            soon as possible.
+            Whether you have a question about how our calculators work, want to suggest a new feature, or
+            spotted a bug, the ToolNest team is here to help. We usually respond within 24–48 hours.
+          </p>
+          <p className="text-sm text-muted-foreground italic">
+            Your privacy matters — details you provide will only be used to reply to your inquiry and will
+            never be shared with third parties.
           </p>
         </div>
 
@@ -169,6 +172,21 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Why Contact Us Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-sans">Why Contact ToolNest?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+              <li>💡 Ask questions about how our calculators work</li>
+              <li>🛠 Report bugs or issues you’ve experienced</li>
+              <li>✨ Suggest new tools or improvements</li>
+              <li>🤝 Explore partnerships or collaborations</li>
+            </ul>
           </CardContent>
         </Card>
       </div>

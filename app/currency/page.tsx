@@ -3,11 +3,10 @@
 import { useState, useEffect } from "react"
 import { PageLayout } from "@/components/page-layout"
 import { CalculatorLayout } from "@/components/calculator-layout"
-import { AdSenseBanner } from "@/components/adsense-banner"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DollarSign, ArrowUpDown } from "lucide-react"
 
@@ -181,7 +180,9 @@ const currencies = [
   { code: "VUV", name: "Vanuatu Vatu" },
   { code: "WST", name: "Samoan Tala" },
   { code: "TOP", name: "Tongan Paʻanga" },
+
 ]
+
 
 export default function CurrencyConverterPage() {
   const [amount, setAmount] = useState("")
@@ -243,10 +244,22 @@ export default function CurrencyConverterPage() {
   }
 
   return (
-    <PageLayout title="Currency Converter" description="Convert between different currencies with real-time rates">
+    <PageLayout
+      title="Currency Converter"
+      description="Convert money between different currencies with up-to-date exchange rates"
+    >
+      {/* Intro Section */}
+      <div className="max-w-3xl mx-auto text-center mb-10 space-y-4">
+        <h2 className="font-sans text-2xl font-bold">Free Online Currency Converter</h2>
+        <p className="text-muted-foreground">
+          Our currency converter helps you quickly calculate exchange values between major and minor currencies around the world.
+          Whether you’re traveling, shopping online, or doing business internationally, this tool provides up-to-date exchange rates.
+        </p>
+      </div>
+
       <CalculatorLayout
         title="Currency Converter"
-        description="Convert between different currencies with up-to-date exchange rates"
+        description="Enter an amount, choose your currencies, and convert instantly"
         icon={DollarSign}
       >
         <div className="space-y-6">
@@ -342,10 +355,43 @@ export default function CurrencyConverterPage() {
               {loading ? "Updating..." : "Refresh Rates"}
             </Button>
           </div>
-
-
         </div>
       </CalculatorLayout>
+
+      {/* Educational Section */}
+      <div className="max-w-3xl mx-auto mt-12 space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>How to Use This Currency Converter</CardTitle>
+          </CardHeader>
+          <CardContent className="text-muted-foreground space-y-2">
+            <p>1. Enter the amount of money you want to convert.</p>
+            <p>2. Choose your source and target currencies.</p>
+            <p>3. Click <b>Convert</b> to see the result instantly.</p>
+            <p>4. Use the <b>Swap</b> button to quickly reverse currencies.</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>What Affects Exchange Rates?</CardTitle>
+          </CardHeader>
+          <CardContent className="text-muted-foreground space-y-2">
+            <p>Exchange rates are influenced by many factors, including:</p>
+            <ul className="list-disc list-inside">
+              <li>Inflation and interest rates</li>
+              <li>Economic stability and growth</li>
+              <li>Government policies and central bank interventions</li>
+              <li>Global trade and demand for currencies</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <p className="text-xs text-muted-foreground italic text-center">
+          Disclaimer: Exchange rates shown here are for informational purposes only and may differ from
+          official bank or market rates.
+        </p>
+      </div>
     </PageLayout>
   )
 }

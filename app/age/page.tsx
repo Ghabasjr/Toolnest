@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar } from "lucide-react"
+import Link from "next/link"
 
 interface AgeResult {
   years: number
@@ -80,10 +81,24 @@ export default function AgeCalculatorPage() {
     <PageLayout title="Age Calculator" description="Calculate your exact age in years, months, and days">
       <CalculatorLayout
         title="Age Calculator"
-        description="Enter your birth date to find out your exact age"
+        description="Find your exact age in years, months, and days, plus see how many days remain until your next birthday."
         icon={Calendar}
       >
-        <div className="space-y-6">
+        <div className="space-y-8">
+          {/* Introductory Content */}
+          <div className="space-y-4">
+            <p className="text-muted-foreground">
+              Our free Age Calculator helps you quickly determine your exact age in years, months, and days. Whether
+              you’re planning a birthday, filling out official forms, or just curious about how many days you’ve been
+              alive, this tool gives you accurate results instantly.
+            </p>
+            <p className="text-muted-foreground">
+              Unlike a simple subtraction of years, the calculator accounts for months and days, making the results
+              precise. You’ll also discover how many days are left until your next birthday, which is perfect for event
+              planning or countdowns.
+            </p>
+          </div>
+
           {/* Input Field */}
           <div className="space-y-2">
             <Label htmlFor="birthdate">Birth Date</Label>
@@ -134,6 +149,31 @@ export default function AgeCalculatorPage() {
               </CardContent>
             </Card>
           )}
+
+          {/* Extra Content Section */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">How It Works</h3>
+            <p className="text-muted-foreground">
+              The calculator uses today’s date and compares it with your birth date. It adjusts for months and days to
+              give an accurate breakdown of your age. It also calculates the difference in days to your next birthday,
+              taking leap years into account.
+            </p>
+            <p className="text-muted-foreground">
+              Common uses for this tool include calculating ages for school admission forms, job applications, HR
+              documentation, sports registrations, and personal milestones.
+            </p>
+            <p className="text-muted-foreground">
+              Want to explore more? Try our{" "}
+              <Link href="/bmi" className="underline text-primary">
+                BMI Calculator
+              </Link>{" "}
+              or{" "}
+              <Link href="/currency" className="underline text-primary">
+                Currency Converter
+              </Link>{" "}
+              for additional helpful tools.
+            </p>
+          </div>
         </div>
       </CalculatorLayout>
     </PageLayout>

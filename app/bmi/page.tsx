@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calculator } from "lucide-react"
+import Link from "next/link"
 
 interface BMIResult {
   bmi: number
@@ -33,11 +34,9 @@ export default function BMICalculatorPage() {
 
     let bmi: number
     if (unit === "metric") {
-      // Height in cm, weight in kg
       const heightInMeters = h / 100
       bmi = w / (heightInMeters * heightInMeters)
     } else {
-      // Height in inches, weight in pounds
       bmi = (w / (h * h)) * 703
     }
 
@@ -81,10 +80,23 @@ export default function BMICalculatorPage() {
     <PageLayout title="BMI Calculator" description="Calculate your Body Mass Index and health category">
       <CalculatorLayout
         title="BMI Calculator"
-        description="Enter your height and weight to calculate your Body Mass Index"
+        description="Check your Body Mass Index (BMI) and see your health category based on WHO standards."
         icon={Calculator}
       >
-        <div className="space-y-6">
+        <div className="space-y-8">
+          {/* Intro Content */}
+          <div className="space-y-4">
+            <p className="text-muted-foreground">
+              Body Mass Index (BMI) is a simple measurement that uses your height and weight to estimate whether you are
+              underweight, at a healthy weight, overweight, or obese. It’s widely used by healthcare professionals as a
+              quick screening tool for potential health risks.
+            </p>
+            <p className="text-muted-foreground">
+              Use the calculator below to find out your BMI. Choose metric (cm, kg) or imperial (inches, lbs) units, and
+              you’ll receive both your BMI score and your health category instantly.
+            </p>
+          </div>
+
           {/* Unit Selection */}
           <div className="flex gap-4 justify-center">
             <Button
@@ -154,6 +166,36 @@ export default function BMICalculatorPage() {
               </CardContent>
             </Card>
           )}
+
+          {/* Educational Section */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">How BMI is Calculated</h3>
+            <p className="text-muted-foreground">
+              The formula is simple: BMI = weight (kg) ÷ [height (m)]². For imperial units, it’s BMI = (weight (lbs) ÷
+              [height (in)]²) × 703. The result places you into one of four categories:
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-1">
+              <li>Underweight: Below 18.5</li>
+              <li>Normal weight: 18.5 – 24.9</li>
+              <li>Overweight: 25 – 29.9</li>
+              <li>Obese: 30 and above</li>
+            </ul>
+            <p className="text-muted-foreground">
+              Remember, BMI is a general guideline. It doesn’t distinguish between muscle and fat or account for age,
+              gender, or body type. Athletes, for example, may have a high BMI due to muscle mass but still be healthy.
+            </p>
+            <p className="text-muted-foreground">
+              Want to try more? Check out our{" "}
+              <Link href="/age" className="underline text-primary">
+                Age Calculator
+              </Link>{" "}
+              or{" "}
+              <Link href="/currency" className="underline text-primary">
+                Currency Converter
+              </Link>{" "}
+              for other useful tools.
+            </p>
+          </div>
         </div>
       </CalculatorLayout>
     </PageLayout>
