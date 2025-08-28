@@ -166,8 +166,8 @@ export default function ContactPage() {
                 <h3 className="font-semibold mb-2">Direct Email</h3>
                 <p className="text-sm text-muted-foreground">
                   You can also reach us directly at{" "}
-                  <a href="mailto:hello@toolnest.com" className="text-primary hover:underline">
-                    hello@toolnest.com
+                  <a href="mailto:toolnestapp@gmail.com" className="text-primary hover:underline">
+                    toolnestapp@gmail.com
                   </a>
                 </p>
               </div>
