@@ -90,8 +90,8 @@ export default function PrivacyPolicyPage() {
                 <p className="text-muted-foreground leading-relaxed">
                   If you have any questions about this Privacy Policy or how your information is handled,
                   please contact us at{" "}
-                  <a href="mailto:hello@toolnest.com" className="text-primary hover:underline">
-                    hello@toolnest.com
+                  <a href="mailto:toolnestapp@gmail.com" className="text-primary hover:underline">
+                    toolnestapp@gmail.com
                   </a>
                   .
                 </p>
