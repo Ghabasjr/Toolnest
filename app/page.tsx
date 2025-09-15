@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { AdSenseBanner } from "@/components/adsense-banner"
 import { Calculator, Calendar, DollarSign, ArrowRight, Percent, Thermometer } from "lucide-react"
 import Link from "next/link"
+import Script from "next/script"
 
 export default function HomePage() {
   const tools = [
@@ -70,6 +71,13 @@ export default function HomePage() {
       title="ToolNest - Free Online Calculators (BMI, Currency, Loan, Tip, Percentage)"
       description="ToolNest offers a suite of free calculators including BMI, Age, Loan/EMI, Currency Converter, Tip, Temperature, and Percentage calculators. Fast, accurate, and easy to use."
     >
+      <Script
+        async
+        id="adsense-script"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8493316210982445"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+      />
       {/* Hero Section */}
       <div className="text-center mb-12">
         <h1 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-4">
