@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { AdSenseBanner } from "@/components/adsense-banner"
 import { Calculator, Calendar, DollarSign, ArrowRight, Percent, Thermometer } from "lucide-react"
 import Link from "next/link"
-import Script from "next/script"
+// import Script from "next/script"
 
 export default function HomePage() {
   const tools = [
@@ -71,13 +71,19 @@ export default function HomePage() {
       title="ToolNest - Free Online Calculators (BMI, Currency, Loan, Tip, Percentage)"
       description="ToolNest offers a suite of free calculators including BMI, Age, Loan/EMI, Currency Converter, Tip, Temperature, and Percentage calculators. Fast, accurate, and easy to use."
     >
-      <Script
-        async
-        id="adsense-script"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8493316210982445"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
+      {/* Google AdSense Script */}
+      {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8493316210982445"
+     crossorigin="anonymous"></script>
+{/* <!-- advertisement --> */}
+      {/* <ins class="adsbygoogle" */}
+      {/* style="display:block" */}
+      {/* data-ad-client="ca-pub-8493316210982445" */}
+      {/* data-ad-slot="3930917121" */}
+      {/* data-ad-format="auto" */}
+      {/* data-full-width-responsive="true"></ins> */}
+      {/* <script> */}
+      {/* (adsbygoogle = window.adsbygoogle || []).push({}); */}
+      {/* </script> */}
       {/* Hero Section */}
       <div className="text-center mb-12">
         <h1 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -92,7 +98,7 @@ export default function HomePage() {
         {/* AdSense Ad Space */}
         <div className="mb-8 flex justify-center">
           <AdSenseBanner
-            adSlot="1111111111"
+            adSlot="3930917121"
             adFormat="auto"
             className="w-full max-w-4xl"
             style={{ minHeight: "90px" }}

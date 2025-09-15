@@ -28,7 +28,7 @@ export function CalculatorLayout({ title, description, icon: Icon, children }: C
 
       {/* AdSense Ad Space */}
       <div className="mt-8 flex justify-center">
-        <AdSenseBanner adSlot="0987654321" adFormat="auto" className="w-full max-w-2xl" style={{ minHeight: "90px" }} />
+        <AdSenseBanner adSlot="3930917121" adFormat="auto" className="w-full max-w-2xl" style={{ minHeight: "90px" }} />
       </div>
     </div>
   )
