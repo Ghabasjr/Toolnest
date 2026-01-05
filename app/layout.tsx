@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Manrope } from "next/font/google"
+import Script from "next/script"
 import { ErrorBoundary } from "@/components/error-boundary"
 import "./globals.css"
 
@@ -58,18 +59,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased`}>
       <head>
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossOrigin="anonymous"
-        />
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'><rect width='16' height='20' x='4' y='2' rx='2' ry='2'/><line x1='8' x2='16' y1='6' y2='6'/><line x1='8' x2='16' y1='10' y2='10'/><line x1='8' x2='16' y1='14' y2='14'/><line x1='8' x2='16' y1='18' y2='18'/></svg>"
         />
       </head>
       <body className="font-serif">
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8493316210982445"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <ErrorBoundary>{children}</ErrorBoundary>
       </body>
     </html>

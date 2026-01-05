@@ -9,7 +9,7 @@ export function Footer() {
           {/* AdSense Ad Space */}
           <div className="mb-8 flex justify-center">
             <AdSenseBanner
-              adSlot="1234567890"
+              adSlot="3930917121"
               adFormat="auto"
               className="w-full max-w-4xl"
               style={{ minHeight: "90px" }}
